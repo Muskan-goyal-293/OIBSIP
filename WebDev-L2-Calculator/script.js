@@ -64,6 +64,8 @@ const inputText = document.querySelector(".inputText");
 const allButton = document.querySelectorAll(".allButton button");
 allButton.forEach((val) => {
   val.addEventListener("click", () => {
+    //  check first button is any operator if yes then simply return
+
     if (
       inputText.value === "" &&
       (val.innerHTML == "*" ||
@@ -78,11 +80,14 @@ allButton.forEach((val) => {
       return;
     }
 
+    // clear all input field if C button press
+
     if (val.innerText === "C") {
       inputText.value = "";
       return;
     }
 
+    // check only 1 operator is allow
     let text = inputText.value;
     let lastCher = text[text.length - 1];
     let currentChar = val.innerText;
@@ -106,11 +111,43 @@ allButton.forEach((val) => {
       return;
     }
 
-    if(lastCher === undefined && val.innerText === "Back"){
-      return
-    }
-    
+    //  is last cher is empty then back button is press then simply return
 
-    inputText.value += val.innerHTML;
+    if (lastCher === undefined && val.innerText === "Back") {
+      return;
+    }
+
+    //  remove last cher
+    if (lastCher !== undefined && val.innerText === "Back") {
+      inputText.value = text.slice(0, -1);
+      return;
+    }
+
+    // Stop '=' when last character is an operator
+    if (
+      (lastCher === "+" ||
+        lastCher === "-" ||
+        lastCher === "*" ||
+        lastCher === "/" ||
+        lastCher === "%" ||
+        lastCher === ".") &&
+      currentChar === "="
+    ) {
+      inputText.value = text;
+      return;
+    }
+
+    //   calculate operation
+    inputText.value += val.innerText;
+
+    if (currentChar === "=") {
+      let ans = eval(text);
+
+      if (isNaN(ans) || ans === Infinity) {
+        inputText.value = "Error";
+        return;
+      }
+      inputText.value = ans;
+    }
   });
 });
