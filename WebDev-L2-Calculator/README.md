@@ -161,7 +161,7 @@ Muskan
 
 GitHub: https://github.com/Muskan-goyal-293/OIBSIP.git
 
-LinkedIn: 
+LinkedIn: https://muskan-goyal-293.github.io/OIBSIP/WebDev-L2-Calculator/
 
 ---
 
