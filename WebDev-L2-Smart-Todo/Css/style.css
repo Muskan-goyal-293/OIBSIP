@@ -1,236 +1,310 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html,body{
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
-:root{
-
---first :#3B6EA1;
---sec:#345576;
---third:#121E2B;
---four:#F5F5F5;
-
+:root {
+  --first: #3b6ea1;
+  --sec: #345576;
+  --third: #121e2b;
+  --four: #f5f5f5;
 }
-main{
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(to bottom right , var(--third) , var(--sec) , var(--first) , var(--third));
-    color: var(--four);
-    padding: 0rem 1rem;
-text-transform: capitalize;
+main {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom right,
+    var(--third),
+    var(--sec),
+    var(--first),
+    var(--third)
+  );
+  color: var(--four);
+  padding: 0rem 1rem;
+  text-transform: capitalize;
 }
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-        background: linear-gradient(to bottom right , var(--third) , var(--sec) , var(--first) , var(--third));
-box-shadow: 0 0 0.5rem var(--four);
-border-radius: 0.5rem;
-padding: 0.5rem 1rem;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    to bottom right,
+    var(--third),
+    var(--sec),
+    var(--first),
+    var(--third)
+  );
+  box-shadow: 0 0 0.5rem var(--four);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 }
-nav select{
-    padding: 0 1rem;
-    color: var(--four);
-    background-color: transparent;
- border: 1px solid var(--four);
- border-radius: 0.5rem;
- outline: none;
- font-size: 1rem;
- font-weight: 600;
- transition:all 0.4s linear;
+nav select {
+  padding: 0 1rem;
+  color: var(--four);
+  background-color: transparent;
+  border: 1px solid var(--four);
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s linear;
 }
-nav option{
-    background-color: var(--third);
+nav option {
+  background-color: var(--third);
 }
-nav select:hover{
-    box-shadow:  0 0 0.5rem var(--third);
-    scale: 0.95;
+nav select:hover {
+  box-shadow: 0 0 0.5rem var(--third);
+  scale: 0.95;
 }
-.hero{
-    height: 30vh;
-    background: linear-gradient(to bottom right , var(--third) , var(--sec) , var(--first) , var(--third));
-    margin-top: 1rem;
- box-shadow:  0 0 1rem var(--four);
- border-radius: 1rem;
-display: flex;
-align-items: center;
-justify-content: center;
+.hero {
+  height: 30vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--third),
+    var(--sec),
+    var(--first),
+    var(--third)
+  );
+  margin-top: 1rem;
+  box-shadow: 0 0 1rem var(--four);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero h1{
-   font-size: 4rem;
-    height: 12vh;
-    width: fit-content;
-    transform: translateY(-100%);
-    opacity: 0;
-transition: all 0.5s linear;
-text-shadow: 0 1rem 0.4rem var(--third);
-
+.hero h1 {
+  font-size: 4rem;
+  height: 12vh;
+  width: fit-content;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.5s linear;
+  text-shadow: 0 1rem 0.4rem var(--third);
 }
-.hero span{
-display: inline-block;
-    font-size: 4rem;
-    height: 12vh;
-    width: fit-content;
-    transform: translateY(-100%);
-    opacity: 0;
-transition: all 0.5s linear;
-text-shadow: 0 1rem 0.4rem var(--third);
+.hero span {
+  display: inline-block;
+  font-size: 4rem;
+  height: 12vh;
+  width: fit-content;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.5s linear;
+  text-shadow: 0 1rem 0.4rem var(--third);
 }
-@property --rotate{
-    syntax: "<angle>";
-    inherits: false;
-    initial-value: 0deg;
+@property --rotate {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
 @keyframes infoSectionAnimation {
-    from{
-        --rotate :0deg
-    }
-    to{
-        --rotate :360deg
-    }
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
 }
 
+.info {
+  height: 50vh;
+  border: 2px solid transparent;
+  padding: 1.5rem;
+  background:
+    linear-gradient(
+        to bottom right,
+        var(--third),
+        var(--sec),
+        var(--first),
+        var(--third)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--rotate),
+        var(--third),
+        var(--sec),
+        var(--first),
+        var(--four),
+        var(--third),
+        var(--third)
+      )
+      border-box;
+  margin-top: 1rem;
+  box-shadow: 0 0 1rem var(--four);
+  border-radius: 1rem;
+  display: flex;
 
-.info{
- height: 50vh;
- border: 2px solid transparent;
- padding: 1.5rem;   
-    background: linear-gradient(to bottom right , var(--third) , var(--sec) , var(--first) , var(--third)) padding-box,conic-gradient(from var(--rotate) ,var(--third) , var(--sec) , var(--first) , var(--four) ,var(--third) ,var(--third))border-box;
-    margin-top: 1rem;
- box-shadow:  0 0 1rem var(--four);
- border-radius: 1rem;
- display: flex;
- 
- justify-content: space-between;
- flex-direction: column;
- /* animation: infoSectionAnimation 2s linear infinite ; */
-}
-
-.commonDesign{
-    font-size: 1.5rem;
-}
-.allSection{
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-.todoSection{
-    height: 40vh;
-     width: 40vh;
-     border: 2px solid var(--sec);
-     border-radius: 1rem;
-     box-shadow: 0 0 1rem var(--four);
-transition: all 0.5s linear;
-    }
-.todoSection img{
-    height: 100%;
-}
-.todoSection:hover{
-transform:  scale(0.95);
-box-shadow: 0 0 1.5rem var(--four) ;
-}
-.todo{
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(to bottom right , var(--third) , var(--sec) , var(--first) , var(--third));
-    transition: all 0.5s linear ;
-display: none;
-padding: 1rem;
+  justify-content: space-between;
+  flex-direction: column;
+  /* animation: infoSectionAnimation 2s linear infinite ; */
 }
 
-.todoNav{
-    background-color: var(--third);
-    padding:0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 1rem;
+.commonDesign {
+  font-size: 1.5rem;
 }
-.todoH4{
-    font-size: 1.5rem;
+.allSection {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.back{
-    display: none;
-    z-index: -1;
+.todoSection {
+  height: 40vh;
+  width: 40vh;
+  border: 2px solid var(--sec);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--four);
+  transition: all 0.5s linear;
 }
-.show{
-    display: inline;
+.todoSection img {
+  height: 100%;
+}
+.todoSection:hover {
+  transform: scale(0.95);
+  box-shadow: 0 0 1.5rem var(--four);
+}
+.todo {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom right,
+    var(--third),
+    var(--sec),
+    var(--first),
+    var(--third)
+  );
+  transition: all 0.5s linear;
+  /* display: none; */
+  padding: 1rem;
 position: fixed;
-    top: 0%;
-    left: 0%;
-    z-index: 10;
+top: 0%;
 }
-.commonButtonDesign{
-padding: 0.2rem 1rem;
-border:1px solid var(--four);
-border-radius: 1rem;
-background-color: transparent;
-color: var(--four);
-font-weight: 600;
-font-size: 1rem;
-box-shadow: 0 0 0.5rem var(--sec);
-transition:  all 0.5s linear;
+
+.todoNav {
+  background-color: var(--third);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
 }
-.commonButtonDesign:active{
-    scale: 0.95;
+.todoH4 {
+  font-size: 1.5rem;
 }
-.commonButtonDesign:hover{
-    color: var(--first);
-     box-shadow: 0 0 1rem var(--four); 
+.back {
+  display: none;
+  z-index: -1;
 }
-.outer{
-    margin-top: 1rem;
-  background-color:var(--sec);
-       height: 90vh;
-    border-radius: 1rem;
+.show {
+  display: inline;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 10;
+}
+.commonButtonDesign {
+  padding: 0.2rem 1rem;
+  border: 1px solid var(--four);
+  border-radius: 1rem;
+  background-color: transparent;
+  color: var(--four);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 0 0.5rem var(--sec);
+  transition: all 0.5s linear;
+}
+.commonButtonDesign:active {
+  scale: 0.95;
+}
+.commonButtonDesign:hover {
+  color: var(--first);
+  box-shadow: 0 0 1rem var(--four);
+}
+.outer {
+  margin-top: 1rem;
+  background-color: var(--sec);
+  height: 90vh;
+  border-radius: 1rem;
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+.todoLeft {
+  background-color: var(--third);
+  width: 35%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.todoLeft form{
+display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.todoInput {
+  height: 6vh;
+}
+.todoInput,
+.todoTextArea {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: 2px solid var(--sec);
+  outline: none;
+  color: var(--third);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.todoTextArea {
+  height: 12rem;
+  resize: none;
+}
+.dateTodo {
+  color: var(--third);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.todoRight {
+  width: 65%;
+  background-color: var(--third);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  overflow: auto;
+scrollbar-width: none;
+scroll-behavior: smooth;
+}
+.todoRightOuter{
+    background-color: var(--sec);
+padding: 0.5rem;
+border-radius: 0.5rem;
+margin-bottom: 0.7rem;
+display: flex;
+flex-direction: column;
+gap:0.5rem;
+}
+.todoRightOuter .priorityAndTimeOuterDiv{
     display: flex;
-    padding: 0.5rem;
-    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
-.todoLeft{
-    background-color: var(--third);
-    width: 35%;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-padding: 1rem;
-gap:1rem;
-}
-.todoInput{
-height: 6vh;
-    
-}
-.todoInput,.todoTextArea{
-    width: 100%;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    border: 2px solid var(--sec);
-outline: none;
-color: var(--third);
-font-weight: 600;
-font-size: 1rem;
-}
-.todoTextArea{
-height: 12rem;
-resize: none;
-}
-.date{
-    color: var(--third);
-    padding: 0.5rem;
-    border-radius: 1rem;
-    border: none;
+.priorityAndTimeOuterDiv h4{
+    background-color:var(--third);
+    padding: 0.3rem;
+    border-radius: 0.4rem;
     font-size: 1rem;
-    text-transform: uppercase;
 }
-.todoRight{
-    width: 65%;
-    background-color: var(--third);
-border-radius: 1rem;
+.heading{
+    font-size: 1.4rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

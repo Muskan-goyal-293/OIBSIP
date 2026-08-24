@@ -44,15 +44,19 @@
           <img src="images/todo.png" alt="Todo image" />
         </section>
       </section>
+
+
+      <!-- todo section code -->
       <section class="todo">
         <div class="todoNav">
           <button class="commonButtonDesign" id="todoBackButton">Back</button>
-          <h4>Today date</h4>
-          <h4 class="todoH4">Total Task : <span>1</span></h4>
+          <h4 class="todoH4" id="todoTodayDate">Today date</h4>
+          <h4 class="todoH4" >Total Task : <span id="todoTotalTask">1</span></h4>
         </div>
 
         <div class="outer">
           <div class="todoLeft">
+            <form>
             <label for="todoInput">
               <input
                 type="text"
@@ -99,32 +103,16 @@
                   type="date"
                   name="date"
                   id="date"
-                  class="date"
+                  class="dateTodo"
                   placeholder="Due date"
                 />
               </label>
             </div>
             <button class="commonButtonDesign" id="done">create task</button>
-          </div>
+        </form>  
+        </div>
           <div class="todoRight">
-            <div>
-              <div>
-                <h4>priority</h4>
-                <h4>Due date</h4>
-              </div>
-              <h4>lorem lorem</h4>
-              <summary>
-                <details>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Unde odio minus distinctio atque libero harum alias
-                    laudantium id cumque, magnam corporis molestiae nam
-                    voluptatem laborum eveniet quae quas eos inventore.
-                  </p>
-                </details>
-              </summary>
-              <button>Mark as done</button>
-            </div>
+                     
           </div>
         </div>
       </section>
