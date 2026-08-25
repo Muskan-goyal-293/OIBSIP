@@ -19,7 +19,7 @@ function textRevealAnimation() {
     interval = setInterval(() => {
       heroSpan[count].style.transform = `translateY(${0}%)`;
       heroSpan[count].style.opacity = 1;
-      console.log(heroSpan[count]);
+     
       count++;
       if (count > text.length - 1) {
         clearInterval(interval);
@@ -27,7 +27,7 @@ function textRevealAnimation() {
     }, 250);
   });
 }
-// textRevealAnimation()
+textRevealAnimation()
 
 // theme related code
 const themeObject = {
@@ -201,11 +201,19 @@ const dateTodo = document.querySelector(".dateTodo");
 const todoTodayDate = document.querySelector("#todoTodayDate");
 const todoRight = document.querySelector(".todoRight");
 const todoTotalTask = document.querySelector("#todoTotalTask");
+const todoPendingTask = document.querySelector("#todoPendingTask");
+
 todoTodayDate.innerHTML = `${currentDate}\ ${currentMonth} \ ${currentYear}`;
 
 let todoArray = JSON.parse(localStorage.getItem("allTask")) || [];
+let index = null;
+let count =0;
+// show todo task
+
 function showAllTodoTask() {
   todoTotalTask.innerHTML = todoArray.length;
+   todoPendingTask.innerHTML = todoArray.length - count;
+
   let sum = "";
   todoArray.forEach((val, id) => {
     sum += ` <div class="todoRightOuter" id="${id}">
@@ -231,11 +239,14 @@ function showAllTodoTask() {
 }
 showAllTodoTask();
 
+
 function formHandle(e) {
   e.preventDefault();
 }
 
-let radioValue = "";
+// radio value
+
+let radioValue = "important";
 radio.forEach((val) => {
   val.addEventListener("click", () => {
     radioValue = val.id;
@@ -244,6 +255,7 @@ radio.forEach((val) => {
 
 form.addEventListener("submit", (e) => {
   formHandle(e);
+
   const inputValue = todoInput.value.trim();
   const textAreaValue = todoTextArea.value.trim();
 
@@ -251,33 +263,43 @@ form.addEventListener("submit", (e) => {
     alert("input value must be contain at least 1 char");
     return;
   }
-
-  todoArray.push({
+  if(index !== null){
+  todoArray[index] ={
     input: inputValue,
     textArea: textAreaValue,
     radioV: radioValue,
     dateV: dateTodo.value,
-  });
+  }}
+  else{ 
+    todoArray.push({
+      input: inputValue,
+      textArea: textAreaValue,
+      radioV: radioValue,
+      dateV: dateTodo.value,
+    });
+  }
 
   localStorage.setItem("allTask", JSON.stringify(todoArray));
   showAllTodoTask();
-deleteTask();
+  deleteTask();
+  index = null;
 });
 
 
+// delete task
+
 function deleteTask() {
-  const todoDoneButton = document.querySelectorAll(".todoDoneButton");
- 
+  const todoDoneButton = document.querySelectorAll(".todoDoneButton");   
   todoDoneButton.forEach((val) => {
- 
     val.addEventListener("click", () => {
- 
       const confirmDelete = confirm("Do you want to delete?");
       if (!confirmDelete) {
         return;
       }
       todoArray.splice(Number(val.id), 1);
       localStorage.setItem("allTask", JSON.stringify(todoArray));
+      count++;
+      count--;
       showAllTodoTask();
       deleteTask();
       editFun();
@@ -288,22 +310,19 @@ showAllTodoTask();
 deleteTask();
 
 
-function editFun(){
-const edit = document.querySelectorAll(".editButton");
-edit.forEach((val)=>{
-  console.log(val)
-val.addEventListener("click",()=>{
-  console.log(val)
-  todoInput.value = todoArray[val.id].input;
-  todoTextArea.value = todoArray[val.id].textArea;
-  
-      localStorage.setItem("allTask", JSON.stringify(todoArray));
-      
-  showAllTodoTask();
-  deleteTask();
-  editFun();
-})
-})
+// edit function
+function editFun() {
+  const edit = document.querySelectorAll(".editButton");
+  edit.forEach((val) => {
+    val.addEventListener("click", () => {
+      index = Number(val.id);
+      todoInput.value = todoArray[val.id].input;
+      todoTextArea.value = todoArray[val.id].textArea;
+      showAllTodoTask();
+      deleteTask();
+      editFun();
+    });
+  });
 }
 showAllTodoTask();
 deleteTask();
