@@ -65,7 +65,7 @@ Through this project, I practiced:
 * Drag and drop task sorting
 
 ## image
-<img src="images/todo.png" alt="todo img"/>
+<img src="images/todocover.png" alt="todo img"/>
 
 ## Author
 
