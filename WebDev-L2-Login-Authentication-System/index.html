@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Authentication</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="signUp">
+        <form class="signUpForm">
+          <label for="userName">
+            <h2>Name :</h2>
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              class="userName"
+              placeholder="Enter UserName"
+              required
+            />
+          </label>
+
+          <label for="email">
+            <h2>Email :</h2>
+            <input
+              type="email"
+              name="email"
+              id="emai"
+              class="email"
+              placeholder="Enter Email"
+              required
+            />
+          </label>
+          <label for="password">
+            <h2>Password :</h2>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="password"
+              placeholder="Enter Password"
+              required
+            />
+          </label>
+          <label for="confirmPassword">
+            <h2>Confirm Password :</h2>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Enter Confirm Password"
+              class="confirmPassword"
+              required
+            />
+          </label>
+          <a href="#login" class="signUpA">Login</a>
+          <button>Submit</button>
+        </form>
+      </section>
+      <section class="login">
+        <form class="loginForm">
+          <label for="loginEmail">
+            <h2>Email :</h2>
+            <input
+              type="email"
+              name="loginEmail"
+              id="loginEmail"
+              class="loginEmail"
+              placeholder="Enter Email"
+              required
+            />
+          </label>
+          <label for="loginPassword">
+            <h2>Password :</h2>
+            <input
+              type="password"
+              name="loginPassword"
+              id="loginPassword"
+              class="loginPassword"
+              required
+              placeholder="Enter Password"
+            />
+          </label>
+          <a href="#singUp" class="loginA"> sing up</a>
+          <button>Submit</button>
+        </form>
+      </section>
+      <section>  
+        <nav>
+        <div class="navLeft">
+          <img
+            class="navLogo"
+            src="images/logo.webp"
+            alt="Logo"
+            loading="lazy"
+          />
+          <h1 class="navHeading">FocusFlow AI</h1>
+        </div>
+        <div class="navCenter">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#howItWork">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="navRight">
+          <button class="navButton">Get start</button>
+        </div>
+      </nav>
+      <!--  hero section -->
+      <section class="heroSection" id="home">
+        <div class="heroSectionLeft">
+          <p class="heroSectionPeraSmall commonDesign">
+            AI Powered productivity
+          </p>
+          <h1 class="heroSectionH1 commonDesign">
+            Boost Your Productivity With
+            <span class="heoSectionSpan">FocusFlow AI </span>
+          </h1>
+          <p class="heroSectionPera commonDesign">
+            your smart companion to mange &comma; focus better &comma; and
+            achieve more every day
+          </p>
+        </div>
+        <div class="heroSectionRight">
+          <img src="./images/heroSectionImg.webp" alt="AI Image" />
+        </div>
+      </section>
+
+      <section class="featureSection" id="feature">
+        <h1>Powerful Features to Supercharge Your Day</h1>
+        <div class="featureParentOuterDiv">
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-brain" id="AiIcon"></i>
+            <h5 class="featureH5">AI Task Suggestions</h5>
+            <p class="featurePera">
+              Get intelligent task recommendations based on your goals and daily
+              habits.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-clock" id="AiIcon"></i>
+            <h5 class="featureH5">Focus Timer</h5>
+            <p class="featurePera">
+              Stay productive with built-in Pomodoro sessions and smart break
+              reminders.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-chart-line" id="AiIcon"></i>
+            <h5 class="featureH5">Productivity Analytics</h5>
+            <p class="featurePera">
+              Track your progress with detailed insights and performance
+              reports.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-bell" id="AiIcon"></i>
+            <h5 class="featureH5">Smart Reminders</h5>
+            <p class="featurePera">
+              Never miss important deadlines with personalized notifications.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-list-check" id="AiIcon"></i>
+            <h5 class="featureH5">Task Management</h5>
+            <p class="featurePera">
+              Organize, prioritize, and manage all your tasks in one place.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-users" id="AiIcon"></i>
+            <h5 class="featureH5">Team Collaboration</h5>
+            <p class="featurePera">
+              Work seamlessly with teammates through shared projects and
+              updates.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-cloud" id="AiIcon"></i>
+            <h5 class="featureH5">Cloud Sync</h5>
+            <p class="featurePera">
+              Access your tasks and data anywhere with secure cloud
+              synchronization.
+            </p>
+          </div>
+
+          <div class="featureParentDiv">
+            <i class="fa-solid fa-shield-halved" id="AiIcon"></i>
+            <h5 class="featureH5">Secure Workspace</h5>
+            <p class="featurePera">
+              Keep your productivity data protected with advanced security
+              features.
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr class="hr" />
+      <section class="workSection" id="howItWork">
+        <h1 class="workSectionH1">Simple steps to boost productivity</h1>
+        <div class="workSectionParentDiv">
+          <div class="workSectionInerDiv workSectionCommonDesign">
+            <i class="fa-solid fa-user" id="userIcon"></i>
+            <p class="workSectionStepP">Step 1</p>
+            <h4 class="workSectionH4">Create Account</h4>
+            <p class="workSectionDesPera">
+              Sign up in second and setup your own workSpace
+            </p>
+          </div>
+          <div class="workSectionInerDiv workSectionCommonDesign">
+            <i class="fa-solid fa-list" id="listIcon"></i>
+            <p class="workSectionStepP">Step 2</p>
+            <h4 class="workSectionH4">Add Task</h4>
+            <p class="workSectionDesPera">
+              add your task and let AI prioritize them.
+            </p>
+          </div>
+
+          <div class="workSectionInerDiv workSectionCommonDesign">
+            <i class="fa-mosaic fa-solid fa-plane" id="planeIcon"></i>
+            <p class="workSectionStepP">Step 3</p>
+            <h4 class="workSectionH4">stay productive</h4>
+            <p class="workSectionDesPera">
+              focus &comma; complete task &comma; and achieve more.
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr class="hr" />
+      <section class="priceSection" id="pricing">
+        <h1>Simple &comma; transparent pricing</h1>
+        <p>choose the perfect plain for your needs.</p>
+
+        <div class="priceSectionOuterDiv">
+          <div class="priceSectionParentDiv">
+            <h2 class="priceSectionH2">Free</h2>
+            <h3 class="priceSectionH3">&#8377;0<span>&sol;month</span></h3>
+            <ul class="priceSectionUl">
+              <li>10 task per day</li>
+              <li>Pomodoro Timer</li>
+              <li>Basic Analytic</li>
+            </ul>
+            <button class="priceSectionButton">Get start</button>
+          </div>
+          <div class="priceSectionParentDiv" id="proSection">
+            <h2 class="priceSectionH2">Pro</h2>
+            <h3 class="priceSectionH3">&#8377;299<span>&sol;month</span></h3>
+            <ul class="priceSectionUl">
+              <li>Unlimited Task</li>
+              <li>Priority Support</li>
+              <li>AI Task Assist</li>
+              <li>Advance Analytic</li>
+            </ul>
+            <button class="priceSectionButton">Start Free Trial</button>
+          </div>
+          <div class="priceSectionParentDiv">
+            <h2 class="priceSectionH2">Team</h2>
+            <h3 class="priceSectionH3">&#8377;999<span>&sol;month</span></h3>
+            <ul class="priceSectionUl">
+              <li>Unlimited Task</li>
+              <li>Everything in Pro</li>
+              <li>Team Collaboration</li>
+              <li>Admin Controls</li>
+            </ul>
+            <button class="priceSectionButton">Contact Sales</button>
+          </div>
+        </div>
+      </section>
+      <hr class="hr" />
+      <section class="FaqSection" id="faq">
+        <h1>frequently asked questions</h1>
+        <div class="farOuterDiv">
+          <h3>What is focusFlow AI &quest;</h3>
+          <h3>is focusFlow AI is free to use &quest;</h3>
+          <h3>can i use it on mobile device &quest;</h3>
+          <h3>is my data secured &quest;</h3>
+          <h3>how does the AI suggestion work &quest;</h3>
+        </div>
+      </section>
+      <footer><p>&copy; made with full of love</p></footer></section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

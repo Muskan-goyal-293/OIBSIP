@@ -1,0 +1,557 @@
+:root {
+  --Heading: "Poppins", sans-serif;
+  --Pera: "Inter", sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8672a5, #b59bdd);
+  
+}
+
+.signUp,
+.login {
+    width: 100%;
+ height: 100%;
+  background: linear-gradient(135deg, #6711e8, #b59bdd);
+  box-shadow: 0 0 1rem #212121;
+transition:  all 0.5s linear;
+position: fixed;
+display: none;
+}
+
+.login {
+    /* position: fixed; */
+}
+.signUp form,
+.login form {
+    width: 50vh;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 50%;
+    left : 50%;
+    transform:translate(-50% ,-50%);
+}
+
+.signUp label,
+.login label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.signUp h2,
+.login h2 {
+  font-size: 1rem;
+  color: #321740;
+}
+
+.signUp input,
+.login input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.signUp input:focus,
+.login input:focus {
+  border-color: #8672a5;
+  box-shadow: 0 0 10px rgba(134, 114, 165, 0.3);
+}
+
+.signUp button,
+.login button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #321740;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signUp button:hover,
+.login button:hover {
+  background-color: #8672a5;
+}
+
+a {
+  text-decoration: none;
+  color: #321740;
+}
+@media (max-width: 500px) {
+  .signUp form,
+  .login form {
+    padding: 20px;
+  }
+
+  .signUp h2,
+  .login h2 {
+    font-size: 0.9rem;
+  }
+
+  .signUp input,
+  .signUp button,
+  .login input,
+  .login button {
+    font-size: 0.9rem;
+  }
+}
+
+
+nav {
+  background-image: url("../images/backgroundImage.jpg");
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  background-size: cover;
+  width: 100vw;
+}
+.navLeft {
+  display: flex;
+  gap: 1rem;
+}
+.navLeft .navLogo {
+  height: 5vh;
+}
+.navLeft .navHeading {
+  font-size: 1.5rem;
+}
+.navCenter ul {
+  display: flex;
+  gap: 1.5rem;
+}
+.navCenter ul li {
+  list-style: none;
+}
+.navCenter ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.navCenter ul li a:hover {
+  color: rgb(162, 159, 159);
+}
+.navRight .navButton {
+  background: linear-gradient(
+    to right,
+    rgb(90, 0, 128),
+    rgb(187, 0, 255),
+    rgb(255, 192, 255)
+  );
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+}
+
+/* her section css */
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes heroSectionAnimation {
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
+}
+
+.heroSection {
+  background-image: url("../images/backgroundImage.jpg");
+  padding: 4rem;
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heroSectionH1 {
+  font-size: 4rem;
+  font-family: var(--Heading);
+}
+
+.heoSectionSpan {
+  background: linear-gradient(
+    to right,
+    rgb(90, 0, 128),
+    rgb(187, 0, 255),
+    rgb(255, 192, 255)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.heroSectionPera {
+  font-size: 1rem;
+}
+
+.heroSectionPeraSmall {
+  border: 2px solid transparent;
+  padding: 0.5rem;
+  background:
+    linear-gradient(
+        to right,
+        rgb(90, 0, 128),
+        rgb(187, 0, 255),
+        rgb(255, 192, 255)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--rotate),
+        rgb(90, 0, 128),
+        rgb(187, 0, 255),
+        rgb(255, 192, 255),
+        rgb(90, 0, 128)
+      )
+      border-box;
+  width: fit-content;
+  border-radius: 1rem;
+  animation: heroSectionAnimation 1s linear infinite;
+  transition: all ease-in;
+}
+.commonDesign {
+  font-family: var(--Pera);
+}
+.heroSectionRight img {
+  height: 80vh;
+}
+
+/* feature section */
+.featureSection {
+  min-height: 100vh;
+  background-color: #000;
+  padding: 4rem 2rem;
+}
+
+.featureSection h1 {
+  text-align: center;
+  font-family: var(--Heading);
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.featureSection > p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #bdbdbd;
+}
+
+.featureParentOuterDiv {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.featureParentDiv {
+  background: rgb(32, 32, 32);
+  border: 1px solid rgb(135, 135, 246);
+  border-radius: 1rem;
+  flex: 1 1 250px;
+  max-width: 280px;
+  min-height: 260px;
+
+  padding: 1.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  text-align: center;
+
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.featureParentDiv #AiIcon {
+  font-size: 2.8rem;
+  color: rgb(103, 103, 249);
+}
+
+.featureParentDiv .featureH5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.featureParentDiv .featurePera {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+.featureParentDiv:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 0.5rem rgba(103, 103, 249, 0.35);
+  border-color: rgb(162, 150, 228);
+}
+.hr {
+  height: 0.1rem;
+  background-color: #3f3f3f;
+  border-color: #3f3f3f;
+}
+
+/* work section  */
+.workSection {
+  background-color: #000;
+  padding: 4rem 2rem;
+}
+.workSectionH1 {
+  text-align: center;
+  font-size: 4rem;
+  background: linear-gradient(
+    to right,
+    rgb(204, 102, 247),
+    rgb(179, 0, 255),
+    rgb(111, 0, 255)
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 0.5s linear;
+  font-family: var(--Heading);
+}
+.workSectionH1:hover {
+  text-shadow: 1rem 1rem 1rem rgb(115, 6, 115);
+}
+.workSectionParentDiv {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 10rem;
+  justify-content: space-between;
+}
+
+.workSectionCommonDesign {
+  border: 0.2rem solid transparent;
+  background:
+    linear-gradient(#242323) padding-box,
+    conic-gradient(
+        from var(--rotate),
+        purple,
+        rgb(207, 19, 207),
+        rgb(133, 44, 241),
+        rgb(55, 0, 255),
+        purple
+      )
+      border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 15vw;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  height: 40vh;
+  animation: heroSectionAnimation 3s linear infinite;
+  animation-play-state: paused;
+  transition: all 0.5s linear;
+}
+.workSectionCommonDesign:hover {
+  box-shadow: 0px 0px 2rem rgb(86, 29, 199);
+  animation-play-state: running;
+}
+.workSectionH4 {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: var(--Heading);
+}
+.workSectionDesPera {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.workSectionStepP {
+  font-size: 2rem;
+  font-weight: 900;
+}
+#userIcon,
+#listIcon,
+#planeIcon {
+  width: 4rem;
+  padding: 1rem 0rem;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+#userIcon {
+  border: 0.1rem solid rgb(169, 43, 228);
+  background-color: rgb(169, 43, 228);
+}
+#planeIcon {
+  background-color: blue;
+  border: 0.1rem solid blue;
+}
+#listIcon {
+  background-color: rgb(81, 16, 202);
+  border: 0.1rem solid rgb(81, 16, 202);
+}
+
+/* section 4 price section */
+
+.priceSection {
+  background-color: #000;
+  padding: 4rem;
+}
+.priceSection h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-family: var(--Heading);
+  text-shadow: 4px 4px 0 #3f3f3f;
+}
+.priceSection p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: transparent;
+  background-color: purple;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 0.3rem rgb(217, 140, 243);
+}
+.priceSectionOuterDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 4rem 2rem 4rem;
+}
+.priceSectionParentDiv {
+  background-color: #242323;
+  padding: 4rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 0.2rem solid rgb(185, 47, 240);
+  transition: all 0.5s linear;
+}
+.priceSectionParentDiv .priceSectionH2 {
+  font-size: 3rem;
+}
+.priceSectionParentDiv .priceSectionH3 {
+  font-size: 2.3rem;
+  opacity: 0.6;
+}
+.priceSectionParentDiv .priceSectionH3 span {
+  font-size: 1rem;
+}
+.priceSectionButton {
+  background: linear-gradient(
+    to right,
+    rgb(107, 0, 128),
+    rgb(240, 39, 247),
+    rgb(255, 0, 251)
+  );
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.priceSectionButton:hover {
+  cursor: pointer;
+}
+
+.priceSectionButton:active {
+  scale: 0.95;
+}
+
+#proSection {
+  background: linear-gradient(to right bottom, purple, plum);
+  transform: translateY(-10px);
+  scale: 1.1;
+}
+#proSection:hover {
+  scale: 1.2;
+  transform: translateY(-15px);
+}
+
+.priceSectionParentDiv:hover {
+  scale: 1.1;
+  box-shadow: 0 0 2rem plum;
+}
+
+/* section 5 faq  */
+.FaqSection {
+  background-color: #000;
+  padding: 4rem;
+}
+.FaqSection h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-family: var(--Heading);
+}
+
+.FaqSection .farOuterDiv {
+  padding: 4rem;
+}
+.farOuterDiv h3 {
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  font-family: var(--Heading);
+  margin-bottom: 0.4rem;
+  border: 0.2rem solid rgba(50, 50, 50, 0.879);
+  transition: all 0.5s linear;
+}
+.farOuterDiv h3:hover {
+  background: linear-gradient(
+    to right,
+    rgb(90, 0, 128),
+    rgb(187, 0, 255),
+    rgb(255, 192, 255)
+  );
+  border-color: rgb(187, 0, 255);
+  /* transform: translateY(-2rem); */
+  scale: 1.1;
+}
+
+/* footer */
+footer {
+  background-color: #191919;
+  padding: 1rem;
+}
+footer p {
+  text-align: center;
+}
