@@ -7,12 +7,12 @@ const signUpA =document.querySelector(".signUpA");
 const loginA = document.querySelector(".loginA");
 const login = document.querySelector(".login");
 const signUp = document.querySelector(".signUp");
+const aiContent = document.querySelector(".aiContent");
 
 let inputValue =[];
 function formPrevent(e){
     e.preventDefault();
 }
-
 
 signUpA.addEventListener("click", ()=>{
 login.style.display ="block";
@@ -90,23 +90,62 @@ inputValue.push({
 
 localStorage.setItem("userinfo",JSON.stringify(inputValue));
 
-userNameValue = "";
-confirmPasswordValue ="";
-passwordValue = "";
-emailValue = "";
+userName.value = "";
+confirmPassword.value ="";
+password.value = "";
+email.value = "";
+
+signUp.style.display = "none"
+aiContent.style.display ="block"
+
 })
 
 const loginEmail = document.querySelector(".loginEmail");
 const loginPassword = document.querySelector(".loginPassword");
 const loginForm = document.querySelector(".loginForm");
 
-let allUserValue = JSON.parse(localStorage.getItem("userinfo"));
 
-loginForm.addEventListener("click",(e)=>{
-formPrevent(e);
+loginForm.addEventListener("submit",(e)=>{
+    formPrevent(e);
+    const emailValue = loginEmail.value.trim();
+    const passwordValue = loginPassword.value.trim();
+    let inputLocalStorageValue =JSON.parse(localStorage.getItem("userinfo"));
+    inputLocalStorageValue.forEach((val)=>{
+        console.log(emailValue , passwordValue  , val.email , val.password)
+        if(val.email === emailValue && val.password === passwordValue){
+          signUp.style.display ="none"
+            login.style.display = "none";
+            aiContent.style.display = "block";
+          localStorage.setItem("isLoggedIn", true);
+        }
 
-const emailValue = loginEmail.value;
-const passwordValue = loginPassword.value;
+        
+        if(val.email  !== emailValue){
+            alert("email not match");
+            return;
+        }
+
+        if(val.password !== passwordValue){
+            alert("password not match");
+            return;
+        }
+
+    })
+
+   loginEmail.value ="";
+   loginPassword.value =""; 
+
+})
+
+const logout = document.querySelector("#logout");
+let isLoggedIn = localStorage.getItem("isLoggedIn");
+
+logout.addEventListener("click" ,()=>{
+    localStorage.removeItem("isLoggedIn");
+          signUp.style.display ="none"
+            login.style.display = "block";
+            aiContent.style.display = "none";
 
 
 })
+

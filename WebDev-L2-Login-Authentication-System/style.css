@@ -29,12 +29,15 @@ body {
   box-shadow: 0 0 1rem #212121;
 transition:  all 0.5s linear;
 position: fixed;
-display: none;
+z-index: 10;;
+top :0 ;
+left :0;
+}
+.login{
+
+  display: none;
 }
 
-.login {
-    /* position: fixed; */
-}
 .signUp form,
 .login form {
     width: 50vh;
@@ -102,6 +105,11 @@ a {
   text-decoration: none;
   color: #321740;
 }
+
+.password , .confirmPassword ,.email ,.userName ,.loginEmail ,.loginPassword{
+  color: #000;
+}
+
 @media (max-width: 500px) {
   .signUp form,
   .login form {
@@ -121,9 +129,12 @@ a {
   }
 }
 
+.aiContent{
+  display: none;
+}
 
 nav {
-  background-image: url("../images/backgroundImage.jpg");
+  background-image: url("./images/backgroundImage.jpg");
   height: 6vh;
   display: flex;
   align-items: center;
@@ -170,6 +181,11 @@ nav {
   border: none;
   padding: 0.5rem 1rem;
   font-weight: 900;
+transition:  all 0.5s linear;
+}
+
+#logout:hover{
+scale:  0.95;
 }
 
 /* her section css */
@@ -190,7 +206,7 @@ nav {
 }
 
 .heroSection {
-  background-image: url("../images/backgroundImage.jpg");
+  background-image: url("./images/backgroundImage.jpg");
   padding: 4rem;
   display: flex;
   background-position: center;
@@ -554,4 +570,233 @@ footer {
 }
 footer p {
   text-align: center;
+}
+@media (max-width: 1024px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .navCenter ul {
+    gap: 1rem;
+  }
+
+  .heroSection {
+    padding: 8rem 2rem 4rem;
+    gap: 2rem;
+  }
+
+  .heroSectionH1 {
+    font-size: 3rem;
+  }
+
+  .heroSectionRight img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+  }
+
+  .workSectionParentDiv {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .workSectionCommonDesign {
+    width: 220px;
+    min-height: 250px;
+    height: auto;
+  }
+
+  .priceSectionOuterDiv {
+    padding: 3rem 1rem;
+    gap: 1rem;
+  }
+
+  .priceSectionParentDiv {
+    padding: 2rem;
+  }
+
+  #userIcon,
+  #listIcon,
+  #planeIcon {
+    width: 4.5rem;
+  }
+
+  .featureSection h1,
+  .workSectionH1,
+  .priceSection h1,
+  .FaqSection h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile (768px) */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    position: relative;
+  }
+
+  .navLeft {
+    justify-content: center;
+  }
+
+  .navCenter ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .navCenter ul li a {
+    font-size: 1rem;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .heroSectionPeraSmall {
+    margin: auto;
+  }
+
+  .heroSectionH1 {
+    font-size: 2.5rem;
+  }
+
+  .heroSectionRight img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .featureSection {
+    padding: 3rem 1rem;
+  }
+
+  .featureSection h1,
+  .workSectionH1,
+  .priceSection h1,
+  .FaqSection h1 {
+    font-size: 2.2rem;
+  }
+  .featureParentOuterDiv {
+    display: block;
+  }
+
+  .featureParentDiv {
+    width: 100%;
+    margin: 0.5rem auto;
+  }
+
+  .workSectionParentDiv {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .workSectionCommonDesign {
+    width: 100%;
+    max-width: 350px;
+    min-height: 250px;
+    height: auto;
+  }
+
+  .priceSection {
+    padding: 3rem 1rem;
+  }
+
+  .priceSection p {
+    font-size: 1.2rem;
+  }
+
+  .priceSectionOuterDiv {
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  .priceSectionParentDiv {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  #proSection {
+    transform: none;
+    scale: 1;
+  }
+
+  #proSection:hover {
+    transform: none;
+    scale: 1.05;
+  }
+
+  #userIcon,
+  #listIcon,
+  #planeIcon {
+    width: 4.5rem;
+  }
+  .FaqSection {
+    padding: 3rem 1rem;
+  }
+
+  .FaqSection .farOuterDiv {
+    padding: 2rem 0;
+  }
+
+  .farOuterDiv h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile (480px) */
+
+@media (max-width: 480px) {
+  .heroSectionH1 {
+    font-size: 1.5rem;
+  }
+
+  .heroSectionPera {
+    font-size: 0.9rem;
+  }
+
+  .featureSection h1,
+  .workSectionH1,
+  .priceSection h1,
+  .FaqSection h1 {
+    font-size: 1.8rem;
+  }
+
+  .featureParentDiv {
+    padding: 1rem;
+  }
+
+  .featureParentDiv .featureH5 {
+    font-size: 1.2rem;
+  }
+
+  .featureParentDiv .featurePera {
+    font-size: 0.9rem;
+  }
+
+  .priceSectionParentDiv .priceSectionH2 {
+    font-size: 2rem;
+  }
+
+  .priceSectionParentDiv .priceSectionH3 {
+    font-size: 1.6rem;
+  }
+
+  .workSectionStepP {
+    font-size: 1.5rem;
+  }
+
+  .workSectionDesPera {
+    font-size: 1rem;
+  }
 }
